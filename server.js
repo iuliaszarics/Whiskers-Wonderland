@@ -1,16 +1,14 @@
-
+import express from 'express';
+import initialAnimals from './src/data.js'; 
 
 import cors from "cors";
-import express from "express";
-import initialAnimals from "./src/data.js";
-
 const app = express();
 
+// Apply CORS first
 app.use(cors());
 app.use(express.json());
 
 let animals = [...initialAnimals];
-
 
 app.get('/animals', (req, res) => {
   let results = animals;
@@ -86,7 +84,7 @@ app.delete('/animals/:id', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log('Server running on port ${PORT}');
 });
 
 export default app;
