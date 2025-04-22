@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 function AnimalCard({ animal, category }) {
-  let bgColor = "bg-black-200"; 
+  let bgColor = "bg-black-200"; // You can modify this as needed
 
   return (
     <div className={`flex border p-4 rounded-lg shadow-lg ${bgColor}`}>
@@ -12,7 +12,9 @@ function AnimalCard({ animal, category }) {
         <p>{animal.age} years old</p>
         <p>{animal.species} - {animal.breed}</p>
         <p>Color: {animal.color}</p>
-        <Link to={`/animal/${animal.id}`} className="text-blue-700"> More about {animal.name} → </Link>
+        <Link to={`/animal/${animal.id}`} className="text-blue-700">
+          More about {animal.name} →
+        </Link>
       </div>
     </div>
   );

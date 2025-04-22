@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function AddAnimal({ setAnimals }) {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook to navigate to different routes
   const [newAnimal, setNewAnimal] = useState({
     name: "",
     age: "",

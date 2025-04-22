@@ -69,8 +69,9 @@ function App() {
         <div className="w-3/4 p-4 ml-[25%]">
           <Routes>
             <Route path="/" element={<Home searchTerm={searchTerm} animals={currentAnimals} />} />
-            <Route path="/filter/:type" element={<FilteredAnimals searchTerm={searchTerm} animals={animals} />} />
-            <Route path="/animal/:id" element={<AnimalDetail />} />
+            <Route path="/filter/:type" element={<FilteredAnimals searchTerm={searchTerm} animals={currentAnimals} />} />
+
+            <Route path="/animal/:id" element={<AnimalDetail animals={animals} setAnimals={setAnimals} />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/add" element={<AddAnimal />} />
             <Route path="/statistics" element={<Statistics />} />
@@ -78,7 +79,7 @@ function App() {
 
           {/* Pagination Controls */}
           <div className="flex justify-center mt-4">
-            <button
+            <button         
               onClick={prevPage}
               disabled={currentPage === 1}
               className="p-2 bg-gray-500 text-white rounded mr-2"
@@ -100,4 +101,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
